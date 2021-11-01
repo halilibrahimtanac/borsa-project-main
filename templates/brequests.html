@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+<h4>Balance Requests</h4>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">USER ID</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for balance in balances %}
+       <tr>
+          <th>{{balance.user_id}}</th>
+          <th>{{balance.amount}}</th>
+          <th><a href="/accept/{{ balance.user_id }}" class="btn btn-primary">Accept</a></th>
+          <th><a href="/reject/{{ balance.user_id }}" class="btn btn-danger">Reject</a></th>
+       </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock page %}

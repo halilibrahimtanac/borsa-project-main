@@ -1,0 +1,14 @@
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+      {% if session["logged_in"] %}
+          <h1 class="fw-light">Welcome to Borsa  {{ session["username"] }}</h1>
+        {% else %}
+          <h1 class="fw-light">Welcome to Borsa</h1>
+        <p class="lead text-muted">After you become a member of this site, you can buy and sell products.</p>
+
+      {% endif %}
+        
+      </div>
+    </div>
+  </section>

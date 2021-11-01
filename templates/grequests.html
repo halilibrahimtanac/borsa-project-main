@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+<h4>Goods Requests</h4>
+<br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">USER ID</th>
+      <th scope="col">Goods Name</th>
+      <th scope="col">Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for good in goods %}
+       <tr>
+          <th>{{good.user_id}}</th>
+          <th>{{good.goods_name}}</th>
+          <th>{{good.quantity}}</th>
+          <th><a href="/acceptg/{{ good.user_id }}/{{ good.goods_name }}/{{ good.quantity }}" class="btn btn-primary">Accept</a></th>
+          <th><a href="/rejectg/{{ good.user_id }}/{{ good.goods_name }}" class="btn btn-danger">Reject</a></th>
+       </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock page %}

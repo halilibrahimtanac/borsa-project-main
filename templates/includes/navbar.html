@@ -1,0 +1,30 @@
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        Borsa
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      {% if session["logged_in"] and session["user_type"] == "regular" %}
+        <li><a href="/market" class="nav-link px-2 link-secondary">Market</a></li>
+        <li><a href="/sell" class="nav-link px-2 link-dark">Sell Product</a></li>
+        <li><a href="/balance" class="nav-link px-2 link-dark">Add Balance</a></li>
+        <li><a href="/goods" class="nav-link px-2 link-dark">Add Goods</a></li>
+      {% endif %}
+        {% if session["user_type"] == "admin" %}
+           <li><a href="/grequests" class="nav-link px-2 link-dark">Goods Requests</a></li>
+           <li><a href="/brequests" class="nav-link px-2 link-dark">Balance Requests</a></li>
+        {% endif %}
+      </ul>
+     
+      <div class="col-md-3 text-end">
+      {% if session["logged_in"] %}
+          <label>{{session["username"]}}</label>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='/logout'">Logout</button>
+      {% else %}
+        <button type="button" class="btn btn-outline-primary me-2" onclick="window.location.href='/login'">Login</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/signup'">Sign-up</button>
+      {% endif %}
+      </div>
+    </header>
+  </div>

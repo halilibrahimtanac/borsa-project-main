@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+{% from "includes/formhelper.html" import render_field %}
+<form method="POST">
+<dl>
+    {{ render_field(form.name) }}
+    {{ render_field(form.username) }}
+    {{ render_field(form.email) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.confirm) }}
+    {{ render_field(form.tc) }}
+    {{ render_field(form.telephone) }}
+    {{ render_field(form.adress) }}
+</dl>
+<button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+
+{% endblock page %}

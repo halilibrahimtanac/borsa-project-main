@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+
+
+<table>
+<div class="container">
+{% for product in products %}
+<tr class="table table-bordered">
+     <td><h3>{{ product.goods_name}}</h3><br />{{ product.price}}<br /><a href="/buy/{{ product.goods_name }}">Buy</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
+{% endblock page %}

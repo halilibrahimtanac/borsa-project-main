@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+{% from "includes/formhelper.html" import render_field %}
+<div class="container">
+<h1>{{ product }}</h1>
+<h4>Entire quantity: {{ quantity }}kg</h4>
+<h4>Current market price: {{ price }}TRY/kg</h4>
+<form method="POST">
+   {{ render_field(form.quantity) }}
+   <button type="submit" class="btn btn-primary">Buy</button>
+</form>
+
+{% endblock page %}

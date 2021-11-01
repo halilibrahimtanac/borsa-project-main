@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block page %}
+{% from "includes/formhelper.html" import render_field %}
+<form method="POST">
+<dl>
+    {{ render_field(form.goods_name ) }}
+    {{ render_field(form.quantity ) }} 
+</dl>
+<button type="submit" class="btn btn-primary">Request</button>
+</form>
+
+{% endblock page %}
