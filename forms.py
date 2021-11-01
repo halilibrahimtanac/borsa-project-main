@@ -15,7 +15,6 @@ class SignUpForm(Form):
     telephone = StringField("Telephone No(without 0)",validators=[validators.DataRequired()])
     adress = TextAreaField("Adress",validators=[validators.DataRequired()])
 
-
 class BalanceAdd(Form):
     amount = IntegerField("Money amount",validators=[validators.DataRequired()])
 
